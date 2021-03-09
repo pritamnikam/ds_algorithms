@@ -25,7 +25,7 @@ using namespace std;
 vector<int> StockSpan(int arr[], int n) {
 	vector<int> vt;
 	stack<pair<int, int>> st;
-	int psedoValue = 1;
+	int psedoValue = -1;
 
 	for (int i = 0; i < n; ++i) {
 		if (st.empty()) {
@@ -48,6 +48,15 @@ vector<int> StockSpan(int arr[], int n) {
 		}
 
 		st.push(make_pair(i, arr[i]));
+	}
+
+	// index - NGL
+	// arr: {100, 80, 60, 70, 60, 75, 85}
+	// id:  {0,   1,  2,  3,  4,   5,  6}
+	// NGL: {-1,  0,  1,  1,  3,   1,  0}
+	// vt : {1,   1,  1,  2,  1,   4,  6}
+	for (int i = 0; i < n; ++i) {
+		vt[i] = vt[i] - i;
 	}
 
 	return vt;
