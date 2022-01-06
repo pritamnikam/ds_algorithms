@@ -27,6 +27,7 @@ Problem Description:
 */
 
 vector<int> MaximumOfAllSubarraysOfSizeK(int arr[], int n, int k) {
+
     int i = 0;
     int j = 0;
     vector<int> answer;

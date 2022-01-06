@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include <string>
 #include <unordered_map>
 
@@ -30,6 +29,7 @@ in txt.
 */
 
 int CountOccurrencesOfAnagrams(string str, string pattern) {
+
 	int cardinality = 0;
 	unordered_map<char, int> charmap;
 	for (int i = 0; i < pattern.length(); ++i) {
